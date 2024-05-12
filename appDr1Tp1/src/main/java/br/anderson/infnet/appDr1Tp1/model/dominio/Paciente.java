@@ -19,7 +19,7 @@ import java.time.LocalDate;
 public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private          int id;
+    private      Integer id;
     private PacienteTipo tipo;
     private       String nome;
     private       String cpf;
@@ -87,11 +87,11 @@ public class Paciente {
         this.tipo = tipo;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

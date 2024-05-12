@@ -1,5 +1,6 @@
 package br.anderson.infnet.appDr1Tp1.service;
 
+import br.anderson.infnet.appDr1Tp1.model.auxiliar.Constantes;
 import br.anderson.infnet.appDr1Tp1.model.dominio.Paciente;
 import br.anderson.infnet.appDr1Tp1.repository.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +30,11 @@ public class PacienteService {
     }
 
     public Paciente incluir(Paciente item) {
+        item.setId(null);
         return repository.save(item);
     }
 
     public Optional<Paciente> ler(Integer key) {
-
         return repository.findById(key);
     }
 
@@ -44,7 +45,9 @@ public class PacienteService {
     public Collection<Paciente> obterLista(){
         _populaDados();
         return (Collection<Paciente>) repository.findAll();
-        //.obterLista(Sort.by(Direction.ASC, "nome"));
-        //return repository.obterLista();
+    }
+
+    public Paciente salvar(Paciente item) {
+        return repository.save(item);
     }
 }
