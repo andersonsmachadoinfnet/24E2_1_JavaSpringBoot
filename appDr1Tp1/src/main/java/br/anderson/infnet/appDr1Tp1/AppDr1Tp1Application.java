@@ -8,6 +8,7 @@ public class AppDr1Tp1Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AppDr1Tp1Application.class, args);
+		System.out.printf("Aplicação em funcionamento");
 	}
 
 }
