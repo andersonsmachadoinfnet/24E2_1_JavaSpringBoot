@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "3e8fee95-2850-497d-a45e-c198666f9f89",
+		"name": "appDr1Tp2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33820468"
+	},
+	"item": [
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "lista",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produto"
+							]
+						},
+						"description": "Permite obter a lista de todos os produtos cadastrados na API"
+					},
+					"response": []
+				},
+				{
+					"name": "novo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Produto novo\",\r\n    \"ean\": \"1234567890123\",\r\n    \"preco\": 9.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produto"
+							]
+						},
+						"description": "Adiciona uma novo produto na API.  \nO campo ID se informado será sempre ignorado."
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"nome\": \"Pao Plusvita 480g (alterado)\",\r\n    \"ean\": \"7896002306348\",\r\n    \"preco\": 48.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produto"
+							]
+						},
+						"description": "Permite fazer alterações em um produto.  \nDeve ser enviado um JSON que tenha todos os dados do produto desejado. O ID é obrigatório e será utilizado como chave de pesquisa para a atualização de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/produto/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produto",
+								"2"
+							]
+						},
+						"description": "Permite remover um item da lista de produtos da API.  \nVocê deve passar o Id do produto a ser deletado na URL seguindo o padrão QueryParams."
+					},
+					"response": []
+				},
+				{
+					"name": "produto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/produto/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produto",
+								"3"
+							]
+						},
+						"description": "Obtém as informações de um produto específico previamente cadastrado na API.  \nVocê deve passar o Id do produto a ser deletado na URL seguindo o padrão QueryParams."
+					},
+					"response": []
+				}
+			],
+			"description": "API do tipo CRUD para manutenção de dados de Produtos genéricos"
+		}
+	]
+}
