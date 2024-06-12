@@ -21,8 +21,15 @@ public class ProdutoController {
     }
 
     @GetMapping(value = "/{id}")
-    public Optional<Produto> getProduto(@PathVariable int id) {
-        return produtoService.ler(id);
+    public ResponseEntity<Optional<Produto>> getProduto(@PathVariable int id) {
+        Optional<Produto> lTmp;
+        lTmp = produtoService.ler(id);
+        if (lTmp.isEmpty()) {
+            return new ResponseEntity<Optional<Produto>>(lTmp, HttpStatus.NOT_FOUND);
+        }
+        else {
+            return new ResponseEntity<Optional<Produto>>(lTmp, HttpStatus.OK);
+        }
     }
 
     @DeleteMapping(value = "/{id}")
