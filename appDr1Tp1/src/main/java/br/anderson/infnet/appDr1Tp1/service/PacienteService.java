@@ -50,4 +50,8 @@ public class PacienteService {
     public Paciente salvar(Paciente item) {
         return repository.save(item);
     }
+
+    public long count() {
+        return repository.count();
+    }
 }
